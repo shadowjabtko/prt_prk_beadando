@@ -1,0 +1,408 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<game mode="map">
+  <sizeX>10</sizeX>
+  <sizeY>10</sizeY>
+  <next>RED_PLAYER</next>
+  <fields>
+    <field mode="GREEN_PLAYER">
+      <axisX>0</axisX>
+      <axisY>0</axisY>
+    </field>
+    <field mode="SELECT">
+      <axisX>0</axisX>
+      <axisY>1</axisY>
+    </field>
+    <field mode="SELECT">
+      <axisX>0</axisX>
+      <axisY>2</axisY>
+    </field>
+    <field mode="SELECT">
+      <axisX>0</axisX>
+      <axisY>3</axisY>
+    </field>
+    <field mode="SELECT">
+      <axisX>0</axisX>
+      <axisY>4</axisY>
+    </field>
+    <field mode="SELECT">
+      <axisX>0</axisX>
+      <axisY>5</axisY>
+    </field>
+    <field mode="SELECT">
+      <axisX>0</axisX>
+      <axisY>6</axisY>
+    </field>
+    <field mode="SELECT">
+      <axisX>0</axisX>
+      <axisY>7</axisY>
+    </field>
+    <field mode="SELECT">
+      <axisX>0</axisX>
+      <axisY>8</axisY>
+    </field>
+    <field mode="SELECT">
+      <axisX>0</axisX>
+      <axisY>9</axisY>
+    </field>
+    <field mode="SELECT">
+      <axisX>1</axisX>
+      <axisY>0</axisY>
+    </field>
+    <field mode="SELECT">
+      <axisX>1</axisX>
+      <axisY>1</axisY>
+    </field>
+    <field mode="SELECT">
+      <axisX>1</axisX>
+      <axisY>2</axisY>
+    </field>
+    <field mode="SELECT">
+      <axisX>1</axisX>
+      <axisY>3</axisY>
+    </field>
+    <field mode="SELECT">
+      <axisX>1</axisX>
+      <axisY>4</axisY>
+    </field>
+    <field mode="SELECT">
+      <axisX>1</axisX>
+      <axisY>5</axisY>
+    </field>
+    <field mode="SELECT">
+      <axisX>1</axisX>
+      <axisY>6</axisY>
+    </field>
+    <field mode="SELECT">
+      <axisX>1</axisX>
+      <axisY>7</axisY>
+    </field>
+    <field mode="SELECT">
+      <axisX>1</axisX>
+      <axisY>8</axisY>
+    </field>
+    <field mode="GREEN_PLAYER">
+      <axisX>1</axisX>
+      <axisY>9</axisY>
+    </field>
+    <field mode="DELETE">
+      <axisX>2</axisX>
+      <axisY>0</axisY>
+    </field>
+    <field mode="SELECT">
+      <axisX>2</axisX>
+      <axisY>1</axisY>
+    </field>
+    <field mode="SELECT">
+      <axisX>2</axisX>
+      <axisY>2</axisY>
+    </field>
+    <field mode="SELECT">
+      <axisX>2</axisX>
+      <axisY>3</axisY>
+    </field>
+    <field mode="SELECT">
+      <axisX>2</axisX>
+      <axisY>4</axisY>
+    </field>
+    <field mode="SELECT">
+      <axisX>2</axisX>
+      <axisY>5</axisY>
+    </field>
+    <field mode="SELECT">
+      <axisX>2</axisX>
+      <axisY>6</axisY>
+    </field>
+    <field mode="SELECT">
+      <axisX>2</axisX>
+      <axisY>7</axisY>
+    </field>
+    <field mode="SELECT">
+      <axisX>2</axisX>
+      <axisY>8</axisY>
+    </field>
+    <field mode="SELECT">
+      <axisX>2</axisX>
+      <axisY>9</axisY>
+    </field>
+    <field mode="DELETE">
+      <axisX>3</axisX>
+      <axisY>0</axisY>
+    </field>
+    <field mode="SELECT">
+      <axisX>3</axisX>
+      <axisY>1</axisY>
+    </field>
+    <field mode="SELECT">
+      <axisX>3</axisX>
+      <axisY>2</axisY>
+    </field>
+    <field mode="SELECT">
+      <axisX>3</axisX>
+      <axisY>3</axisY>
+    </field>
+    <field mode="SELECT">
+      <axisX>3</axisX>
+      <axisY>4</axisY>
+    </field>
+    <field mode="SELECT">
+      <axisX>3</axisX>
+      <axisY>5</axisY>
+    </field>
+    <field mode="SELECT">
+      <axisX>3</axisX>
+      <axisY>6</axisY>
+    </field>
+    <field mode="SELECT">
+      <axisX>3</axisX>
+      <axisY>7</axisY>
+    </field>
+    <field mode="SELECT">
+      <axisX>3</axisX>
+      <axisY>8</axisY>
+    </field>
+    <field mode="DELETE">
+      <axisX>3</axisX>
+      <axisY>9</axisY>
+    </field>
+    <field mode="DELETE">
+      <axisX>4</axisX>
+      <axisY>0</axisY>
+    </field>
+    <field mode="DELETE">
+      <axisX>4</axisX>
+      <axisY>1</axisY>
+    </field>
+    <field mode="SELECT">
+      <axisX>4</axisX>
+      <axisY>2</axisY>
+    </field>
+    <field mode="SELECT">
+      <axisX>4</axisX>
+      <axisY>3</axisY>
+    </field>
+    <field mode="SELECT">
+      <axisX>4</axisX>
+      <axisY>4</axisY>
+    </field>
+    <field mode="SELECT">
+      <axisX>4</axisX>
+      <axisY>5</axisY>
+    </field>
+    <field mode="SELECT">
+      <axisX>4</axisX>
+      <axisY>6</axisY>
+    </field>
+    <field mode="SELECT">
+      <axisX>4</axisX>
+      <axisY>7</axisY>
+    </field>
+    <field mode="SELECT">
+      <axisX>4</axisX>
+      <axisY>8</axisY>
+    </field>
+    <field mode="DELETE">
+      <axisX>4</axisX>
+      <axisY>9</axisY>
+    </field>
+    <field mode="DELETE">
+      <axisX>5</axisX>
+      <axisY>0</axisY>
+    </field>
+    <field mode="SELECT">
+      <axisX>5</axisX>
+      <axisY>1</axisY>
+    </field>
+    <field mode="SELECT">
+      <axisX>5</axisX>
+      <axisY>2</axisY>
+    </field>
+    <field mode="SELECT">
+      <axisX>5</axisX>
+      <axisY>3</axisY>
+    </field>
+    <field mode="SELECT">
+      <axisX>5</axisX>
+      <axisY>4</axisY>
+    </field>
+    <field mode="SELECT">
+      <axisX>5</axisX>
+      <axisY>5</axisY>
+    </field>
+    <field mode="SELECT">
+      <axisX>5</axisX>
+      <axisY>6</axisY>
+    </field>
+    <field mode="SELECT">
+      <axisX>5</axisX>
+      <axisY>7</axisY>
+    </field>
+    <field mode="DELETE">
+      <axisX>5</axisX>
+      <axisY>8</axisY>
+    </field>
+    <field mode="DELETE">
+      <axisX>5</axisX>
+      <axisY>9</axisY>
+    </field>
+    <field mode="DELETE">
+      <axisX>6</axisX>
+      <axisY>0</axisY>
+    </field>
+    <field mode="SELECT">
+      <axisX>6</axisX>
+      <axisY>1</axisY>
+    </field>
+    <field mode="SELECT">
+      <axisX>6</axisX>
+      <axisY>2</axisY>
+    </field>
+    <field mode="SELECT">
+      <axisX>6</axisX>
+      <axisY>3</axisY>
+    </field>
+    <field mode="SELECT">
+      <axisX>6</axisX>
+      <axisY>4</axisY>
+    </field>
+    <field mode="SELECT">
+      <axisX>6</axisX>
+      <axisY>5</axisY>
+    </field>
+    <field mode="SELECT">
+      <axisX>6</axisX>
+      <axisY>6</axisY>
+    </field>
+    <field mode="SELECT">
+      <axisX>6</axisX>
+      <axisY>7</axisY>
+    </field>
+    <field mode="SELECT">
+      <axisX>6</axisX>
+      <axisY>8</axisY>
+    </field>
+    <field mode="DELETE">
+      <axisX>6</axisX>
+      <axisY>9</axisY>
+    </field>
+    <field mode="SELECT">
+      <axisX>7</axisX>
+      <axisY>0</axisY>
+    </field>
+    <field mode="SELECT">
+      <axisX>7</axisX>
+      <axisY>1</axisY>
+    </field>
+    <field mode="SELECT">
+      <axisX>7</axisX>
+      <axisY>2</axisY>
+    </field>
+    <field mode="SELECT">
+      <axisX>7</axisX>
+      <axisY>3</axisY>
+    </field>
+    <field mode="SELECT">
+      <axisX>7</axisX>
+      <axisY>4</axisY>
+    </field>
+    <field mode="SELECT">
+      <axisX>7</axisX>
+      <axisY>5</axisY>
+    </field>
+    <field mode="SELECT">
+      <axisX>7</axisX>
+      <axisY>6</axisY>
+    </field>
+    <field mode="SELECT">
+      <axisX>7</axisX>
+      <axisY>7</axisY>
+    </field>
+    <field mode="SELECT">
+      <axisX>7</axisX>
+      <axisY>8</axisY>
+    </field>
+    <field mode="DELETE">
+      <axisX>7</axisX>
+      <axisY>9</axisY>
+    </field>
+    <field mode="RED_PLAYER">
+      <axisX>8</axisX>
+      <axisY>0</axisY>
+    </field>
+    <field mode="SELECT">
+      <axisX>8</axisX>
+      <axisY>1</axisY>
+    </field>
+    <field mode="SELECT">
+      <axisX>8</axisX>
+      <axisY>2</axisY>
+    </field>
+    <field mode="SELECT">
+      <axisX>8</axisX>
+      <axisY>3</axisY>
+    </field>
+    <field mode="SELECT">
+      <axisX>8</axisX>
+      <axisY>4</axisY>
+    </field>
+    <field mode="SELECT">
+      <axisX>8</axisX>
+      <axisY>5</axisY>
+    </field>
+    <field mode="SELECT">
+      <axisX>8</axisX>
+      <axisY>6</axisY>
+    </field>
+    <field mode="SELECT">
+      <axisX>8</axisX>
+      <axisY>7</axisY>
+    </field>
+    <field mode="SELECT">
+      <axisX>8</axisX>
+      <axisY>8</axisY>
+    </field>
+    <field mode="SELECT">
+      <axisX>8</axisX>
+      <axisY>9</axisY>
+    </field>
+    <field mode="SELECT">
+      <axisX>9</axisX>
+      <axisY>0</axisY>
+    </field>
+    <field mode="SELECT">
+      <axisX>9</axisX>
+      <axisY>1</axisY>
+    </field>
+    <field mode="SELECT">
+      <axisX>9</axisX>
+      <axisY>2</axisY>
+    </field>
+    <field mode="SELECT">
+      <axisX>9</axisX>
+      <axisY>3</axisY>
+    </field>
+    <field mode="SELECT">
+      <axisX>9</axisX>
+      <axisY>4</axisY>
+    </field>
+    <field mode="SELECT">
+      <axisX>9</axisX>
+      <axisY>5</axisY>
+    </field>
+    <field mode="SELECT">
+      <axisX>9</axisX>
+      <axisY>6</axisY>
+    </field>
+    <field mode="SELECT">
+      <axisX>9</axisX>
+      <axisY>7</axisY>
+    </field>
+    <field mode="SELECT">
+      <axisX>9</axisX>
+      <axisY>8</axisY>
+    </field>
+    <field mode="RED_PLAYER">
+      <axisX>9</axisX>
+      <axisY>9</axisY>
+    </field>
+  </fields>
+</game>

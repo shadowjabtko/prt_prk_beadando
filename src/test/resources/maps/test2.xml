@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<game mode="map">
+  <sizeX>5</sizeX>
+  <sizeY>5</sizeY>
+  <next>RED_PLAYER</next>
+  <fields>
+    <field mode="SELECT">
+      <axisX>0</axisX>
+      <axisY>0</axisY>
+    </field>
+    <field mode="RED_PLAYER">
+      <axisX>0</axisX>
+      <axisY>1</axisY>
+    </field>
+    <field mode="GREEN_PLAYER">
+      <axisX>0</axisX>
+      <axisY>2</axisY>
+    </field>
+    <field mode="SELECT">
+      <axisX>0</axisX>
+      <axisY>3</axisY>
+    </field>
+    <field mode="SELECT">
+      <axisX>0</axisX>
+      <axisY>4</axisY>
+    </field>
+    <field mode="RED_PLAYER">
+      <axisX>1</axisX>
+      <axisY>0</axisY>
+    </field>
+    <field mode="SELECT">
+      <axisX>1</axisX>
+      <axisY>1</axisY>
+    </field>
+    <field mode="SELECT">
+      <axisX>1</axisX>
+      <axisY>2</axisY>
+    </field>
+    <field mode="SELECT">
+      <axisX>1</axisX>
+      <axisY>3</axisY>
+    </field>
+    <field mode="SELECT">
+      <axisX>1</axisX>
+      <axisY>4</axisY>
+    </field>
+    <field mode="SELECT">
+      <axisX>2</axisX>
+      <axisY>0</axisY>
+    </field>
+    <field mode="SELECT">
+      <axisX>2</axisX>
+      <axisY>1</axisY>
+    </field>
+    <field mode="SELECT">
+      <axisX>2</axisX>
+      <axisY>2</axisY>
+    </field>
+    <field mode="SELECT">
+      <axisX>2</axisX>
+      <axisY>3</axisY>
+    </field>
+    <field mode="SELECT">
+      <axisX>2</axisX>
+      <axisY>4</axisY>
+    </field>
+    <field mode="SELECT">
+      <axisX>3</axisX>
+      <axisY>0</axisY>
+    </field>
+    <field mode="SELECT">
+      <axisX>3</axisX>
+      <axisY>1</axisY>
+    </field>
+    <field mode="SELECT">
+      <axisX>3</axisX>
+      <axisY>2</axisY>
+    </field>
+    <field mode="SELECT">
+      <axisX>3</axisX>
+      <axisY>3</axisY>
+    </field>
+    <field mode="SELECT">
+      <axisX>3</axisX>
+      <axisY>4</axisY>
+    </field>
+    <field mode="SELECT">
+      <axisX>4</axisX>
+      <axisY>0</axisY>
+    </field>
+    <field mode="SELECT">
+      <axisX>4</axisX>
+      <axisY>1</axisY>
+    </field>
+    <field mode="SELECT">
+      <axisX>4</axisX>
+      <axisY>2</axisY>
+    </field>
+    <field mode="SELECT">
+      <axisX>4</axisX>
+      <axisY>3</axisY>
+    </field>
+    <field mode="SELECT">
+      <axisX>4</axisX>
+      <axisY>4</axisY>
+    </field>
+  </fields>
+</game>

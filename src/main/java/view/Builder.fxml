@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.BuilderController">
+   <left>
+      <BorderPane BorderPane.alignment="CENTER">
+         <center>
+            <AnchorPane prefHeight="600.0" prefWidth="150.0">
+               <children>
+                  <Button fx:id="btnSelect" layoutX="7.0" layoutY="24.0" mnemonicParsing="false" onAction="#onClickButtons" prefHeight="55.0" prefWidth="135.0" text="Select" />
+                  <Button fx:id="btnDelete" layoutX="7.0" layoutY="91.0" mnemonicParsing="false" onAction="#onClickButtons" prefHeight="55.0" prefWidth="135.0" text="Delete" />
+                  <Button fx:id="btnRed" layoutX="7.0" layoutY="158.0" mnemonicParsing="false" onAction="#onClickButtons" prefHeight="55.0" prefWidth="135.0" text="   Red" />
+                  <Button fx:id="btnGreen" layoutX="7.0" layoutY="225.0" mnemonicParsing="false" onAction="#onClickButtons" prefHeight="55.0" prefWidth="135.0" text=" Green" />
+                  <TextField fx:id="tfFileName" layoutX="8.0" layoutY="318.0" minHeight="-Infinity" prefWidth="135.0" />
+                  <Label layoutX="10.0" layoutY="301.0" text="File Name:" />
+                  <Button layoutX="7.0" layoutY="355.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onClickSave" prefHeight="55.0" prefWidth="135.0" text="Save" />
+                  <Text fx:id="txtWarn" layoutX="10.0" layoutY="432.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+               </children>
+            </AnchorPane>
+         </center>
+         <bottom>
+            <Button minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onClickBack" prefHeight="55.0" prefWidth="135.0" text="Back" BorderPane.alignment="CENTER">
+               <BorderPane.margin>
+                  <Insets bottom="20.0" />
+               </BorderPane.margin></Button>
+         </bottom>
+      </BorderPane>
+   </left>
+   <center>
+      <BorderPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <right>
+            <Slider fx:id="verticalSlider" blockIncrement="1.0" majorTickUnit="5.0" max="25.0" min="5.0" minorTickCount="5" orientation="VERTICAL" showTickLabels="true" showTickMarks="true" snapToTicks="true" value="12.0" BorderPane.alignment="CENTER">
+               <BorderPane.margin>
+                  <Insets bottom="15.0" top="15.0" />
+               </BorderPane.margin>
+            </Slider>
+         </right>
+         <bottom>
+            <Slider fx:id="horizontalSlider" blockIncrement="1.0" majorTickUnit="5.0" max="25.0" min="5.0" minorTickCount="5" prefHeight="38.0" prefWidth="507.0" showTickLabels="true" showTickMarks="true" snapToTicks="true" value="18.0" BorderPane.alignment="CENTER">
+               <BorderPane.margin>
+                  <Insets left="15.0" right="35.0" />
+               </BorderPane.margin>
+            </Slider>
+         </bottom>
+         <center>
+            <AnchorPane fx:id="anchorPane" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: c0c0c0;" BorderPane.alignment="CENTER">
+               <BorderPane.margin>
+                  <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+               </BorderPane.margin>
+            </AnchorPane>
+         </center>
+      </BorderPane>
+   </center>
+</BorderPane>
