@@ -31,7 +31,7 @@ public class GameController implements Initializable {
 	Text greenPoints;
 
 	@FXML
-	Text textWon;
+	Text txtInfo;
 
 	public static void setMode(String p_mode) {
 		mode = p_mode;
@@ -43,9 +43,9 @@ public class GameController implements Initializable {
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
-		textWon.setText("");
+		txtInfo.setText("");
 
-		game = new GameGraphical(1, 1,mode, anchorPane, redPoints, greenPoints, textWon);
+		game = new GameGraphical(1, 1,mode, anchorPane, redPoints, greenPoints, txtInfo);
 		DomXMLReader<GameGraphical> domXMLReader = new DomXMLReader<>(game);
 		domXMLReader.setGameFieldFromXML(path);
 
