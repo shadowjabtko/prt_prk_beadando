@@ -6,7 +6,7 @@ import java.net.URL;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
-import java.util.Arrays;
+import java.util.HashMap;
 import java.util.ResourceBundle;
 
 import application.Main;
@@ -45,46 +45,52 @@ public class NewGameController implements Initializable {
 	@FXML
 	AnchorPane anchorPane;
 
-	ArrayList<String> allPath = new ArrayList<>();
-	
+	HashMap<String, String> maps = new HashMap<>();
+
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 		toggleGroup = new ToggleGroup();
 		rbHumanVHuman.setToggleGroup(toggleGroup);
 		rbHumanVHuman.setSelected(true);
 		rbHumanVComputer.setToggleGroup(toggleGroup);
-	
-		
-		
-		allPath.add("maps " + "map1.xml");
-		allPath.add("maps " + "map2.xml");
-		allPath.add("maps " + "map3.xml");
-		
-		Path path = Paths.get(System.getProperty("user.home"), "Hexxagon Game","custom_maps");
-		File file = path.toFile();
-		ArrayList<String> names = new ArrayList<String>(Arrays.asList(file.list()));
-		names.stream().forEach(x -> allPath.add("custom_maps " + x));
-		
-		names.clear();
-		allPath.stream().forEach(x -> names.add(x.toString().replace(".xml", "").replaceFirst(" ", ": ")));
 
-		ObservableList<String> items = FXCollections.observableArrayList(names);
+		maps.put("map1.xml", "maps");
+		maps.put("map2.xml", "maps");
+		maps.put("map3.xml", "maps");
+
+		Path path = Paths.get(System.getProperty("user.home"), "Hexxagon Game", "custom_maps");
+		File file = path.toFile();
+		if (file.exists()) {
+			String[] customMaps = file.list();
+			for (int i = 0; i < customMaps.length; i++) {
+				maps.put(customMaps[i], "custom_maps");
+			}
+		}
+
+		ArrayList<String> namesForList = new ArrayList<>();
+		maps.entrySet().stream().sorted((x, y) -> x.getKey().compareTo(y.getKey()))
+				.forEach(x -> namesForList.add(x.getValue() + ": " + x.getKey().replace(".xml", "")));
+
+		ObservableList<String> items = FXCollections.observableArrayList(namesForList);
 		listView.setItems(items);
 		listView.getSelectionModel().select(0);
 
-		gameView = new GameViewGraphical(1, 1,"map", anchorPane);
+		gameView = new GameViewGraphical(1, 1, "map", anchorPane);
 		domXMLReader = new DomXMLReader<GameViewGraphical>(gameView);
-		
-		
-		domXMLReader.setGameFieldFromXML(allPath.get(0));
-		
+		String[] splitted = listView.getSelectionModel().getSelectedItem().split(":");
+		domXMLReader.setGameFieldFromXML(splitted[0], splitted[1].substring(1)+".xml");
+
+		//domXMLReader.setGameFieldFromXML("maps", "map1.xml");
+
 		listView.getSelectionModel().selectedIndexProperty().addListener(new ChangeListener<Number>() {
 
 			@Override
 			public void changed(ObservableValue<? extends Number> observable, Number oldValue, Number newValue) {
-				
-				domXMLReader.setGameFieldFromXML(allPath.get(newValue.intValue()));
-				gameView.setTransformations(anchorPane.getWidth(), anchorPane.getHeight(), gameView.getSizeX(), gameView.getSizeY());
+
+				String[] splitted = listView.getSelectionModel().getSelectedItem().split(":");
+				domXMLReader.setGameFieldFromXML(splitted[0], splitted[1].substring(1)+".xml");
+				gameView.setTransformations(anchorPane.getWidth(), anchorPane.getHeight(), gameView.getSizeX(),
+						gameView.getSizeY());
 				gameView.updateAnchorPane();
 			}
 		});
@@ -95,12 +101,13 @@ public class NewGameController implements Initializable {
 	public void onClickStart(ActionEvent event) {
 		if (rbHumanVComputer.isSelected()) {
 			GameController.setMode("hvc");
-		} else if (rbHumanVHuman.isSelected()){
+		} else if (rbHumanVHuman.isSelected()) {
 			GameController.setMode("hvh");
 		}
-		
-		GameController.setPath(allPath.get(listView.getSelectionModel().getSelectedIndex()));
-		// GameController.setPath(Paths.get("maps", "map1.xml"));
+
+		String[] splitted = listView.getSelectionModel().getSelectedItem().split(":");
+		GameController.setFolder(splitted[0]);
+		GameController.setFileName(splitted[1].substring(1)+".xml");
 		try {
 			BorderPane borderPane = (BorderPane) FXMLLoader.load(getClass().getResource("/view/Game.fxml"));
 			Main.getRoot().setCenter(borderPane);
@@ -119,5 +126,4 @@ public class NewGameController implements Initializable {
 			e.printStackTrace();
 		}
 	}
-
 }

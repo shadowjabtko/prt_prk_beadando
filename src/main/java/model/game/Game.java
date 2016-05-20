@@ -4,6 +4,9 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import model.field.Field;
 import model.field.Field.States;
 
@@ -20,8 +23,10 @@ public class Game<T extends Field> implements GameInterface<T>{
 	private List<T> farToSelectedField;
 	private T computerFrom;
 	private T computerWhere;
-
+	private Logger logger = LoggerFactory.getLogger(Game.class);
+	
 	public Game(Integer sizeX, Integer sizeY, String mode) {
+		logger.info("asd");
 		this.sizeX = sizeX;
 		this.sizeY = sizeY;
 		this.mode = mode;

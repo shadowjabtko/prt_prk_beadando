@@ -25,28 +25,18 @@ public class DomXMLReader<T extends Game<?>> {
 		this.game = game;
 	}
 	
-	public void setGameFieldFromXML(String path){
+	public void setGameFieldFromXML(String folder, String fileName){
 		try {
 			DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
 			DocumentBuilder builder = factory.newDocumentBuilder();
-			//Path path = Paths.get("/maps", "map1.xml");
-			//System.out.println(path.toString());
-			//InputStream is = getClass().getResourceAsStream("/maps/map1.xml");
-			//tring asd = path.toString();
-			//asd = asd.replace("\\", "/");
-			//System.out.println(asd);
-			//InputStream is = getClass().getResourceAsStream(asd);
-			//System.out.println("\\maps\\map1.xml");
-			
-			//Document doc = builder.parse(filePath.toFile());
-			String[] splitted = path.split(" ");
+
 			Document doc = null;
-			if (splitted[0].equals("maps")) {
-				String resourcePath = "/" + splitted[0] + "/" + splitted[1];
+			if (folder.equals("maps")) {
+				String resourcePath = "/" + folder + "/" + fileName;
 				InputStream is = getClass().getResourceAsStream(resourcePath);
 				doc = builder.parse(is);
-			} else if(splitted[0].equals("custom_maps")){
-				Path fullPath = Paths.get(System.getProperty("user.home"), "Hexxagon Game", splitted[0],splitted[1]);
+			} else if(folder.equals("custom_maps")){
+				Path fullPath = Paths.get(System.getProperty("user.home"), "Hexxagon Game", folder,fileName);
 				doc = builder.parse(fullPath.toFile());
 			}
 			
@@ -62,16 +52,6 @@ public class DomXMLReader<T extends Game<?>> {
 				int axisX = Integer.parseInt(field.getElementsByTagName("axisX").item(0).getTextContent());
 				int axisY = Integer.parseInt(field.getElementsByTagName("axisY").item(0).getTextContent());
 				String fieldMode = field.getAttribute("mode");
-				/*
-				States state = States.SELECT;
-				if (fieldMode.equals("delete")) {
-					state = States.DELETE;
-				} else if (fieldMode.equals("red_player")){
-					state = States.RED_PLAYER;
-				} else if (fieldMode.equals("green_player")){
-					state = States.GREEN_PLAYER;
-				}
-				*/
 				game.getField(axisX, axisY).setState(States.valueOf(fieldMode));
 			}
 			

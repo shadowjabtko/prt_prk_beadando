@@ -18,7 +18,8 @@ import model.game.GameGraphical;
 public class GameController implements Initializable {
 
 	private static String mode;
-	private static String path;
+	private static String folder;
+	private static String fileName;
 	private GameGraphical game;
 
 	@FXML
@@ -37,24 +38,29 @@ public class GameController implements Initializable {
 		mode = p_mode;
 	}
 
-	public static void setPath(String p_path) {
-		path = p_path;
+	public static void setFolder(String p_folder) {
+		folder = p_folder;
 	}
 
+	public static void setFileName(String p_fileName) {
+		fileName = p_fileName;
+	}
+
+	
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 		txtInfo.setText("");
 
 		game = new GameGraphical(1, 1,mode, anchorPane, redPoints, greenPoints, txtInfo);
 		DomXMLReader<GameGraphical> domXMLReader = new DomXMLReader<>(game);
-		domXMLReader.setGameFieldFromXML(path);
+		domXMLReader.setGameFieldFromXML(folder,fileName);
 
 	}
 
 	@FXML
 	public void onClickBack(ActionEvent event) {
 		try {
-			BorderPane borderPane = (BorderPane) FXMLLoader.load(getClass().getResource("/view/GameMenu.fxml"));
+			BorderPane borderPane = (BorderPane) FXMLLoader.load(getClass().getResource("/view/MainMenu.fxml"));
 			Main.getRoot().setCenter(borderPane);
 		} catch (IOException e) {
 			// TODO Auto-generated catch block

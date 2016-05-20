@@ -29,8 +29,10 @@ public class DomXMLWriter<T extends Game<?>> {
 		this.game = game;
 		this.fileName = new String("");
 		reWrite = false;
-		Path path = Paths.get(System.getProperty("user.home"), "Hexxagon Game","custom_maps");
+		Path path = Paths.get(System.getProperty("user.home"), "Hexxagon Game");
 		if(!path.toFile().exists()){
+			path.toFile().mkdir();
+			path = Paths.get(System.getProperty("user.home"), "Hexxagon Game","custom_maps");
 			path.toFile().mkdir();
 		}
 	}
@@ -39,7 +41,7 @@ public class DomXMLWriter<T extends Game<?>> {
 		if (!this.fileName.equals(fileName)) {
 			reWrite = false;
 		}
-		this.fileName = fileName.replace(" ", "_");
+		this.fileName = fileName;
 	}
 	
 	public String getFileName(){
@@ -48,9 +50,9 @@ public class DomXMLWriter<T extends Game<?>> {
 	
 	private Path getPath(){
 		if (fileName.endsWith(".xml")) {
-			return Paths.get(System.getProperty("user.home"), "Hexxagon Game",fileName);
+			return Paths.get(System.getProperty("user.home"), "Hexxagon Game","custom_maps",fileName);
 		} else {
-			return Paths.get(System.getProperty("user.home"), "Hexxagon Game",fileName + ".xml");
+			return Paths.get(System.getProperty("user.home"), "Hexxagon Game","custom_maps",fileName + ".xml");
 		}
 	}
 	

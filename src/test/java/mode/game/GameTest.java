@@ -18,10 +18,10 @@ public class GameTest {
 		game = new GameNormal(1, 1, "hvh");
 		game2 = new GameNormal(1, 1, "hvh");
 		DomXMLReader<GameNormal> domXMLReader = new DomXMLReader<>(game);
-		domXMLReader.setGameFieldFromXML("maps test1.xml");
+		domXMLReader.setGameFieldFromXML("maps","test1.xml");
 		
 		domXMLReader = new DomXMLReader<GameNormal>(game2);
-		domXMLReader.setGameFieldFromXML("maps test2.xml");
+		domXMLReader.setGameFieldFromXML("maps","test2.xml");
 	}
 	
 	@Test
