@@ -13,10 +13,7 @@ import model.field.Field.States;
 
 /**
  * The {@code Game} represents the whole game.
- * <p>
- * The {@code Game} can handle any kind of field which extends from
- * {@code Field}
- * <p>
+ * 
  * 
  * @author ShadowJabtko
  *
@@ -131,7 +128,6 @@ public class Game<T extends Field> {
 		player.setPlayer(game.getPlayer().getPlayer());
 		logger.trace("New game from game.");
 	}
-
 
 	/**
 	 * Returns the mode of the {@code Game}.
@@ -254,7 +250,7 @@ public class Game<T extends Field> {
 		}
 		return null;
 	}
-	
+
 	/**
 	 * Returns all {@code Field} of the {@code Game} as a single list.
 	 * 
@@ -362,7 +358,7 @@ public class Game<T extends Field> {
 	 * @return A list with all {@code Field} which distance is 1 from the
 	 *         parameter suits the filter.
 	 * 
-	 * @see model.game.Game#getCloseFields(Field)        
+	 * @see model.game.Game#getCloseFields(Field)
 	 */
 	public List<T> getCloseFieldsFiltered(Field field, States filter) {
 		return getCloseFields(field).stream().filter(x -> x.getState() == filter).collect(Collectors.toList());
@@ -378,7 +374,7 @@ public class Game<T extends Field> {
 	 *            The selection criteria.
 	 * @return A list with all {@code Field} which distance is 2 from the
 	 *         parameter suits the filter.
-	 * @see model.game.Game#getFarFields(Field)        
+	 * @see model.game.Game#getFarFields(Field)
 	 */
 	public List<T> getFarFieldsFiltered(Field field, States filter) {
 		return getFarFields(field).stream().filter(x -> x.getState() == filter).collect(Collectors.toList());
@@ -408,8 +404,8 @@ public class Game<T extends Field> {
 	 * 
 	 * @param field
 	 *            The {@code Field} we want to select,
-	 *         
-	 * @see model.game.Game#isSelectable(Field)           
+	 * 
+	 * @see model.game.Game#isSelectable(Field)
 	 */
 	public void select(T field) {
 		if (isSelectable(field)) {
@@ -474,11 +470,11 @@ public class Game<T extends Field> {
 	 * player to the opposite player. If the {@code Game} mode is
 	 * "Human vs. Computer" then this method call the computerMove() method.
 	 * 
-	 * @see model.game.Game#computerMove()
+	 * 
 	 * @param where
 	 *            Destination of movement.
 	 * @return The captured {@code Fields} after movement.
-	 * @see model.game.Game#isMovable(Field)
+	 * @see model.game.Game#computerMove()
 	 */
 	public int moveSelectedTo(T where) {
 		int result = 0;
@@ -561,7 +557,7 @@ public class Game<T extends Field> {
 				x -> getCloseFieldsFiltered(x, States.SELECT).size() + getFarFieldsFiltered(x, States.SELECT).size())
 				.sum();
 		if (count == 0) {
-			logger.info("No available move!");
+			logger.warn("No available move!");
 			return false;
 		}
 		return true;
@@ -624,10 +620,10 @@ public class Game<T extends Field> {
 		OptionalInt max = availableOppositeFields.stream()
 				.mapToInt(x -> getCloseFieldsFiltered(x, player.getPlayer()).size()).max();
 		if (max.isPresent()) {
-			logger.info("max attackable: " + new Integer(max.getAsInt()).toString());
+			logger.info("Max attackable: " + new Integer(max.getAsInt()).toString());
 			return max.getAsInt();
 		} else {
-			logger.info("max attackable: 0");
+			logger.info("Max attackable: 0");
 			return 0;
 		}
 

@@ -10,16 +10,33 @@ import javafx.scene.text.Text;
 import model.field.Field.States;
 import model.field.FieldGraphical;
 /**
- * 
+ * Extended {@code AbstractGameGraphical} object which use for playing the game.
  * @author ShadowJabtko
  *
  */
 public class GameGraphical extends AbstractGameGraphical {
-
+	/**
+	 * Text for showing the red player points.
+	 */
 	Text redPoints;
+	/**
+	 * Text for showing the green player points.
+	 */
 	Text greenPoints;
+	/**
+	 * Text for showing informations for the user(s).
+	 */
 	Text txtInfo;
-
+	/**
+	 * Constructs a newly allocated {@code GameGraphical} with the specified parameters.
+	 * @param sizeX sizeX of {@code GameGraphical}.
+	 * @param sizeY sizeY of {@code GameGraphical}.
+	 * @param mode mode of {@code GameGraphical}.
+	 * @param anchorPane AnchorPane where {@code GameGraphical} will appear.
+	 * @param redPoints Text for showing the red player points.
+	 * @param greenPoints Text for showing the green player points.
+	 * @param txtInfo Text for showing informations for the user(s).
+	 */
 	public GameGraphical(Integer sizeX, Integer sizeY, String mode, AnchorPane anchorPane, Text redPoints,
 			Text greenPoints, Text txtInfo) {
 		super(sizeX, sizeY, mode, anchorPane);

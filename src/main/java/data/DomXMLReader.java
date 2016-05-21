@@ -16,30 +16,40 @@ import org.xml.sax.SAXException;
 
 import model.field.Field.States;
 import model.game.Game;
+
 /**
  * This class is for reading an xml file and set up a new game according to xml.
+ * 
  * @author ShadowJabtko
  *
  * @param <T>
+ *            Object which extends {@code Game}.
  */
 public class DomXMLReader<T extends Game<?>> {
 	/**
-	 *Object for holding the {@code Game}.
+	 * Object for holding the {@code Game}.
 	 */
 	T game;
+
 	/**
-	 * Constructs a newly allocated {@code DomXMLReader}
-	 * @param game The {@code Game} we want to set up.
+	 * Constructs a newly allocated {@code DomXMLReader}.
+	 * 
+	 * @param game
+	 *            The {@code Game} we want to set up.
 	 */
-	public DomXMLReader(T game){
+	public DomXMLReader(T game) {
 		this.game = game;
 	}
+
 	/**
-	 * The main process
-	 * @param folder The folder that contains the map
-	 * @param fileName The file name of the xml.
+	 * Set up {@code Game} according to the given xml. 
+	 * 
+	 * @param folder
+	 *            The folder that contains the xml.
+	 * @param fileName
+	 *            The file name of the xml.
 	 */
-	public void setGameFieldFromXML(String folder, String fileName){
+	public void setGameFieldFromXML(String folder, String fileName) {
 		try {
 			DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
 			DocumentBuilder builder = factory.newDocumentBuilder();
@@ -49,17 +59,17 @@ public class DomXMLReader<T extends Game<?>> {
 				String resourcePath = "/" + folder + "/" + fileName;
 				InputStream is = getClass().getResourceAsStream(resourcePath);
 				doc = builder.parse(is);
-			} else if(folder.equals("custom_maps")){
-				Path fullPath = Paths.get(System.getProperty("user.home"), "Hexxagon Game", folder,fileName);
+			} else if (folder.equals("custom_maps")) {
+				Path fullPath = Paths.get(System.getProperty("user.home"), "Hexxagon Game", folder, fileName);
 				doc = builder.parse(fullPath.toFile());
 			}
-			
+
 			Element root = (Element) doc.getElementsByTagName("game").item(0);
 			int sizeX = Integer.parseInt(root.getElementsByTagName("sizeX").item(0).getTextContent());
 			int sizeY = Integer.parseInt(root.getElementsByTagName("sizeY").item(0).getTextContent());
 			game.setSizeX(sizeX);
 			game.setSizeY(sizeY);
-			
+
 			NodeList fields = root.getElementsByTagName("field");
 			for (int i = 0; i < fields.getLength(); i++) {
 				Element field = (Element) fields.item(i);
@@ -68,7 +78,7 @@ public class DomXMLReader<T extends Game<?>> {
 				String fieldMode = field.getAttribute("mode");
 				game.getField(axisX, axisY).setState(States.valueOf(fieldMode));
 			}
-			
+
 		} catch (ParserConfigurationException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

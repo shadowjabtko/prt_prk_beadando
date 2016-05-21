@@ -33,7 +33,14 @@ public abstract class AbstractGameGraphical extends Game<FieldGraphical> {
 	 * The mouse event which describe the circle behaviors.
 	 */
 	protected EventHandler<MouseEvent> mouseEventCircle;
-
+	/**
+	 * Constructs a newly allocated {@code Game} with the specified parameters. 
+	 * 
+	 * @param sizeX sizeX of {@code Game}.
+	 * @param sizeY sizeY of {@code Game}.
+	 * @param mode mode of {@code Game}.
+	 * @param anchorPane AnchorPane where {@code Game} will appear.
+	 */
 	public AbstractGameGraphical(Integer sizeX, Integer sizeY, String mode, AnchorPane anchorPane) {
 		super(sizeX, sizeY, mode);
 		this.anchorPane = anchorPane;
@@ -63,7 +70,7 @@ public abstract class AbstractGameGraphical extends Game<FieldGraphical> {
 
 	/**
 	 * This method describe which graphical element should appear on the
-	 * AnchorPane
+	 * AnchorPane.
 	 */
 	public abstract void updateAnchorPane();
 

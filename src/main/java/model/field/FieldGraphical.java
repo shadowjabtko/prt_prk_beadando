@@ -56,10 +56,10 @@ public class FieldGraphical extends Field {
 	}
 
 	/**
-	 * Set the state of the {@code FieldGraphical}
+	 * Set the state of the {@code FieldGraphical}.
 	 * 
 	 * @param state
-	 *            New state of the {@code FieldGraphical}
+	 *            New state of the {@code FieldGraphical}.
 	 * 
 	 */
 	@Override

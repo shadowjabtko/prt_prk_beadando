@@ -12,7 +12,9 @@ import model.field.Field.States;
  */
 
 public class Player {
-	
+	/**
+	 * Logger for logging.
+	 */
 	Logger logger = LoggerFactory.getLogger(Player.class);
 	
 	/**

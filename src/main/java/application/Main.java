@@ -1,10 +1,13 @@
 package application;
 
 import javafx.application.Application;
+import javafx.application.Platform;
+import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
+import javafx.stage.WindowEvent;
 
 public class Main extends Application {
 
@@ -20,6 +23,14 @@ public class Main extends Application {
 			primaryStage.setScene(scene);
 			primaryStage.setMinHeight(600.0);
 			primaryStage.setMinWidth(800.0);
+			primaryStage.setOnCloseRequest(new EventHandler<WindowEvent>() {
+				
+				@Override
+				public void handle(WindowEvent event) {
+					Platform.exit();
+					System.exit(0);
+				}
+			});
 			primaryStage.show();
 		} catch (Exception e) {
 			e.printStackTrace();

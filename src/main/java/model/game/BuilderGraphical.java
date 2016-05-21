@@ -11,19 +11,58 @@ import javafx.scene.shape.Polygon;
 import model.field.Field.States;
 import model.field.FieldGraphical;
 
+/**
+ * Extended {@code AbstractGameGraphical} object which use for building a map.
+ * 
+ * @author ShadowJabtko
+ *
+ */
 public class BuilderGraphical extends AbstractGameGraphical {
 
+	/**
+	 * Local variable that holding which tool is is selected.
+	 */
 	private States builderState;
+	/**
+	 * Horizontal slider for changing sizeX.
+	 */
 	private Slider horizontalSlider;
+	/**
+	 * Horizontal slider for changing sizeY.
+	 */
 	private Slider verticalSlider;
 
-	public BuilderGraphical(Integer sizeX, Integer sizeY,String mode, AnchorPane anchorPane, Slider horizontalSlider,Slider verticalSlider) {
-		super(sizeX, sizeY,mode, anchorPane);
+	/**
+	 * 
+	 * Constructs a newly allocated {@code BuilderGraphical} with the specified parameters.
+	 * 
+	 * @param sizeX
+	 *            sizeX of {@code BuilderGraphical}.
+	 * @param sizeY
+	 *            sizeY of {@code BuilderGraphical}.
+	 * @param mode
+	 *            mode of {@code BuilderGraphical}.
+	 * @param anchorPane
+	 *            AnchorPane where {@code BuilderGraphical} will appear.
+	 * @param horizontalSlider
+	 *            slider for changing sizeY.
+	 * @param verticalSlider
+	 *            slider for changing sizeY.
+	 */
+	public BuilderGraphical(Integer sizeX, Integer sizeY, String mode, AnchorPane anchorPane, Slider horizontalSlider,
+			Slider verticalSlider) {
+		super(sizeX, sizeY, mode, anchorPane);
 		this.horizontalSlider = horizontalSlider;
 		this.verticalSlider = verticalSlider;
 		initSliders();
 	}
 
+	/**
+	 * Sets the current state.
+	 * 
+	 * @param builderState
+	 *            ...
+	 */
 	public void setBuilderMode(States builderState) {
 		this.builderState = builderState;
 	}
@@ -67,7 +106,6 @@ public class BuilderGraphical extends AbstractGameGraphical {
 			}
 		};
 	}
-	
 
 	@Override
 	public void updateAnchorPane() {
@@ -75,8 +113,11 @@ public class BuilderGraphical extends AbstractGameGraphical {
 		anchorPane.getChildren().addAll(getPolygons());
 		anchorPane.getChildren().addAll(getVisibleCircles());
 	}
-	
-	public void initSliders(){
+
+	/**
+	 * Initializing the sliders value change behaviors.
+	 */
+	public void initSliders() {
 		verticalSlider.valueProperty().addListener(new ChangeListener<Number>() {
 
 			@Override
@@ -104,6 +145,5 @@ public class BuilderGraphical extends AbstractGameGraphical {
 			}
 		});
 	}
-
 
 }

@@ -14,7 +14,7 @@
 			<email>balazs.szegedi@gmail.com</email>
 			<organization>0S Corporation</organization>
 			<roles>
-				<role>deleloper</role>
+				<role>developer</role>
 			</roles>
 		</developer>
 	</developers>
@@ -26,8 +26,6 @@
 		First mode is human against human and the second one is human against computer.  
 	</description>
 	<scm>
-		<connection>scm:https://github.com/shadowjabtko/prt_prk_beadando.git</connection>
-		<developerConnection>scm:https://github.com/shadowjabtko/prt_prk_beadando.git</developerConnection>
 		<url>https://github.com/shadowjabtko/prt_prk_beadando</url>
 	</scm>
 	<properties>
@@ -74,6 +72,7 @@
 					<include>**/*.xml</include>
 					<include>**/*.fxml</include>
 					<include>**/*.png</include>
+					<include>*.xml</include>
 				</includes>
 			</resource>
 		</resources>
@@ -154,6 +153,9 @@
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-surefire-report-plugin</artifactId>
 				<version>2.19.1</version>
+				<configuration>
+					<skipTests>false</skipTests>
+				</configuration>
 			</plugin>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
@@ -173,7 +175,7 @@
 				</reportSets>
 				<configuration>
 					<excludes>
-						<exclude>${basedir}/src/test/**/*.class</exclude>
+						<exclude>controller/*</exclude>
 					</excludes>
 				</configuration>
 			</plugin>
@@ -183,6 +185,8 @@
 				<version>2.17</version>
 				<configuration>
 					<configLocation>${basedir}/config/checkstyle.xml</configLocation>
+					<excludes>controller/*,application/*,</excludes>
+
 				</configuration>
 			</plugin>
 		</plugins>

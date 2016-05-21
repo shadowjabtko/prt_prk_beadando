@@ -1,4 +1,3 @@
-package model.game;
 /**
  * This package contains the engine of the game (Game) which can use for graphical game and command line game. Actually i did not wrote a bash for 
  * command line gaming. I use the GameNormal only for testing.
@@ -7,3 +6,4 @@ package model.game;
  * GameGraphical is all you need to experience this awesome game.   
  *  
 */
+package model.game;
