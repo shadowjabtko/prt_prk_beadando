@@ -9,7 +9,11 @@ import javafx.scene.shape.Polygon;
 import javafx.scene.text.Text;
 import model.field.Field.States;
 import model.field.FieldGraphical;
-
+/**
+ * 
+ * @author ShadowJabtko
+ *
+ */
 public class GameGraphical extends AbstractGameGraphical {
 
 	Text redPoints;

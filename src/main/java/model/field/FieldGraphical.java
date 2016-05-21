@@ -11,7 +11,7 @@ import javafx.scene.shape.StrokeType;
  * Representing the {@code Field} graphically.
  * 
  * @author ShadowJabtko
- *
+ * @see model.field.Field
  */
 public class FieldGraphical extends Field {
 
@@ -23,10 +23,22 @@ public class FieldGraphical extends Field {
 	 * A circle which representing the players.
 	 */
 	private Circle circle;
-
+	/**
+	 * Hexagonal points.
+	 */
 	private static final Double[] polygonPoints = new Double[] { -30.0, 0.0, -15.0, -25.0, 15.0, -25.0, 30.0, 0.0, 15.0,
 			25.0, -15.0, 25.0 };
 
+	/**
+	 * Represents the {@code Field} graphically.
+	 * 
+	 * @param axisX
+	 *            Coordinate X
+	 * @param axisY
+	 *            Coordinate Y
+	 * 
+	 * 
+	 */
 	public FieldGraphical(Integer axisX, Integer axisY) {
 		super(axisX, axisY);
 		polygon = new Polygon();
@@ -43,6 +55,13 @@ public class FieldGraphical extends Field {
 		setState(States.SELECT);
 	}
 
+	/**
+	 * Set the state of the {@code FieldGraphical}
+	 * 
+	 * @param state
+	 *            New state of the {@code FieldGraphical}
+	 * 
+	 */
 	@Override
 	public void setState(States state) {
 		super.setState(state);
@@ -67,7 +86,7 @@ public class FieldGraphical extends Field {
 	}
 
 	/**
-	 * Returns the polygon
+	 * Returns the polygon.
 	 * 
 	 * @return The polygon.
 	 */
@@ -76,18 +95,21 @@ public class FieldGraphical extends Field {
 	}
 
 	/**
-	 * Returns the circle
+	 * Returns the circle.
 	 * 
-	 * @return The circle-
+	 * @return The circle.
 	 */
 	public Circle getCircle() {
 		return circle;
 	}
-	
+
 	/**
-	 * Set the polygon and circle scale according to parameters. 
-	 * @param scaleX The scale on x axis.
-	 * @param scaleY The scale on y axis.
+	 * Set the polygon and circle scale according to parameters.
+	 * 
+	 * @param scaleX
+	 *            The scale on x axis.
+	 * @param scaleY
+	 *            The scale on y axis.
 	 */
 	private void setScale(double scaleX, double scaleY) {
 		polygon.setScaleX(scaleX);
@@ -95,10 +117,14 @@ public class FieldGraphical extends Field {
 		circle.setScaleX(scaleX);
 		circle.setScaleY(scaleY);
 	}
+
 	/**
-	 * Set the polygon and circle translate according to parameters. 
-	 * @param translateX The translate on x axis.
-	 * @param translateY The translate on y axis.
+	 * Set the polygon and circle translate according to parameters.
+	 * 
+	 * @param translateX
+	 *            The translate on x axis.
+	 * @param translateY
+	 *            The translate on y axis.
 	 */
 	private void setTranslate(double translateX, double translateY) {
 		polygon.setTranslateX(translateX);
@@ -106,12 +132,18 @@ public class FieldGraphical extends Field {
 		circle.setTranslateX(translateX);
 		circle.setTranslateY(translateY);
 	}
+
 	/**
-	 * Calculate and performs the transformations. 
-	 * @param paneWidth AnchorPane width where the game is appear.
-	 * @param paneHeight AnchorPane height where the game is appear.
-	 * @param sizeX The sizeX of the current game. 
-	 * @param sizeY The sizeY of the current game.
+	 * Calculate and performs the transformations.
+	 * 
+	 * @param paneWidth
+	 *            AnchorPane width where the game is appear.
+	 * @param paneHeight
+	 *            AnchorPane height where the game is appear.
+	 * @param sizeX
+	 *            The sizeX of the current game.
+	 * @param sizeY
+	 *            The sizeY of the current game.
 	 */
 	public void setTransformations(double paneWidth, double paneHeight, double sizeX, double sizeY) {
 		double scaleX = paneWidth / (sizeX * 45 + 15);
@@ -127,19 +159,24 @@ public class FieldGraphical extends Field {
 		setScale(scaleX, scaleY);
 		setTranslate(translateX - polygonPoints[0] * scaleX, translateY + polygonPoints[11] * scaleY);
 	}
-	
+
 	/**
 	 * Sets the polygon border color (highlight).
-	 * @param color The color of the highlight.
+	 * 
+	 * @param color
+	 *            The color of the highlight.
 	 */
 	public void setHighlight(Color color) {
 		polygon.setStroke(color);
 	}
-	
+
 	/**
 	 * Sets the behavior of the polygon and circle.
-	 * @param mouseEventPolygon Behavior of polygon.
-	 * @param mouseEventCircle Behavior of circle.
+	 * 
+	 * @param mouseEventPolygon
+	 *            Behavior of polygon.
+	 * @param mouseEventCircle
+	 *            Behavior of circle.
 	 */
 	public void setMouseEvents(EventHandler<MouseEvent> mouseEventPolygon, EventHandler<MouseEvent> mouseEventCircle) {
 		polygon.setOnMouseClicked(mouseEventPolygon);

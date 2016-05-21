@@ -132,28 +132,6 @@ public class Game<T extends Field> {
 		logger.trace("New game from game.");
 	}
 
-	/**
-	 * Creates a new instance of {@code Field}. Every object which extends
-	 * {@code Game} has to override this method.
-	 * 
-	 * @param i
-	 *            The axisX of the {@code Field}.
-	 * @param j
-	 *            The axisY of the {@code Field}
-	 * @return The newly created {@code Field}
-	 */
-	public T newFieldInstance(int i, int j) {
-
-		try {
-			@SuppressWarnings("unchecked")
-			T field = (T) new Field(i, j);
-			return field;
-		} catch (ClassCastException e) {
-			logger.error(e.getMessage());
-			logger.warn("Make sure you implemented this method.");
-		}
-		return null;
-	}
 
 	/**
 	 * Returns the mode of the {@code Game}.
@@ -222,9 +200,9 @@ public class Game<T extends Field> {
 			}
 		}
 		logger.trace("Game sizeX changed from " + this.sizeX + " to " + sizeX);
-		
+
 		this.sizeX = sizeX;
-		
+
 	}
 
 	/**
@@ -254,6 +232,29 @@ public class Game<T extends Field> {
 		this.sizeY = sizeY;
 	}
 
+	/**
+	 * Creates a new instance of {@code Field}. Every object which extends
+	 * {@code Game} has to override this method.
+	 * 
+	 * @param i
+	 *            The axisX of the {@code Field}.
+	 * @param j
+	 *            The axisY of the {@code Field}
+	 * @return The newly created {@code Field}
+	 */
+	public T newFieldInstance(int i, int j) {
+
+		try {
+			@SuppressWarnings("unchecked")
+			T field = (T) new Field(i, j);
+			return field;
+		} catch (ClassCastException e) {
+			logger.error(e.getMessage());
+			logger.warn("Make sure you implemented this method.");
+		}
+		return null;
+	}
+	
 	/**
 	 * Returns all {@code Field} of the {@code Game} as a single list.
 	 * 
@@ -360,6 +361,8 @@ public class Game<T extends Field> {
 	 * 
 	 * @return A list with all {@code Field} which distance is 1 from the
 	 *         parameter suits the filter.
+	 * 
+	 * @see model.game.Game#getCloseFields(Field)        
 	 */
 	public List<T> getCloseFieldsFiltered(Field field, States filter) {
 		return getCloseFields(field).stream().filter(x -> x.getState() == filter).collect(Collectors.toList());
@@ -375,6 +378,7 @@ public class Game<T extends Field> {
 	 *            The selection criteria.
 	 * @return A list with all {@code Field} which distance is 2 from the
 	 *         parameter suits the filter.
+	 * @see model.game.Game#getFarFields(Field)        
 	 */
 	public List<T> getFarFieldsFiltered(Field field, States filter) {
 		return getFarFields(field).stream().filter(x -> x.getState() == filter).collect(Collectors.toList());
@@ -404,6 +408,8 @@ public class Game<T extends Field> {
 	 * 
 	 * @param field
 	 *            The {@code Field} we want to select,
+	 *         
+	 * @see model.game.Game#isSelectable(Field)           
 	 */
 	public void select(T field) {
 		if (isSelectable(field)) {
@@ -411,7 +417,7 @@ public class Game<T extends Field> {
 			closeToSelectedField = getCloseFieldsFiltered(selectedField, States.SELECT);
 			farToSelectedField = getFarFieldsFiltered(selectedField, States.SELECT);
 		}
-		
+
 	}
 
 	/**
@@ -472,6 +478,7 @@ public class Game<T extends Field> {
 	 * @param where
 	 *            Destination of movement.
 	 * @return The captured {@code Fields} after movement.
+	 * @see model.game.Game#isMovable(Field)
 	 */
 	public int moveSelectedTo(T where) {
 		int result = 0;
@@ -504,6 +511,9 @@ public class Game<T extends Field> {
 	 * Returns the amount of {@code Field} of the current player.
 	 * 
 	 * @return The amount of {@code Field} of the current player.
+	 * @see model.game.Game#getRedPlayerCount()
+	 * @see model.game.Game#getGreenPlayerCount()
+	 * 
 	 */
 	public int getCurrentPlayerCount() {
 		if (player.getPlayer() == States.RED_PLAYER) {

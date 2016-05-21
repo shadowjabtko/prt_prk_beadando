@@ -6,7 +6,7 @@ import org.slf4j.LoggerFactory;
 import model.field.Field.States;
 
 /**
- * The {@code Player} represent the player of the {@code Game}.
+ * A {@code Player} represent the player of the {@code Game}.
  * @author ShadowJabtko
  *
  */

@@ -16,7 +16,7 @@ import model.field.FieldGraphical;
  * Representing the Game graphically.
  * 
  * @author ShadowJabtko
- *
+ * @see model.game.Game
  */
 
 public abstract class AbstractGameGraphical extends Game<FieldGraphical> {
@@ -101,7 +101,7 @@ public abstract class AbstractGameGraphical extends Game<FieldGraphical> {
 	}
 
 	/**
-	 * Returns all of the polygons.
+	 * Returns all polygons.
 	 * 
 	 * @return A list with all polygon.
 	 */
@@ -110,7 +110,7 @@ public abstract class AbstractGameGraphical extends Game<FieldGraphical> {
 	}
 
 	/**
-	 * Returns all visible polygon.
+	 * Returns all visible polygons.
 	 * 
 	 * @return A list with visible polygons.
 	 */
