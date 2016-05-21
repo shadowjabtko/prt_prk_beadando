@@ -1,5 +1,6 @@
 # Hexxagon README
 ## Developer: Szegedi Balázs
+## Current version 1.0
 ## Content
 1. Short description of the game
 2. Requirements
@@ -9,7 +10,7 @@
 ### 1. Short description:
 Hexxagon is game with graphical user interface, where user can choose from two mode.
 First mode is human against human and the second one is human against computer.  
-The game goal is to occupy more fields on the are then your oppenent.
+The game goal is to occupy more fields on the area then your oppenent.
 
 ### 2. Requirements:
 To compile and run the jar file you need:
