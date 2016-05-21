@@ -10,7 +10,7 @@
    <center>
       <BorderPane prefHeight="600.0" prefWidth="800.0">
          <center>
-            <AnchorPane maxHeight="300.0" maxWidth="400.0" minHeight="300.0" minWidth="400.0" prefHeight="200.0" prefWidth="400.0" style="-fx-background-color: c0c0c0;" BorderPane.alignment="CENTER">
+            <AnchorPane maxHeight="300.0" maxWidth="400.0" minHeight="300.0" minWidth="400.0" prefHeight="200.0" prefWidth="400.0" BorderPane.alignment="CENTER">
                <BorderPane.margin>
                   <Insets />
                </BorderPane.margin>

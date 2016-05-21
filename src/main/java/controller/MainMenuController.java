@@ -27,7 +27,7 @@ public class MainMenuController implements Initializable {
 	@FXML
 	private void clickBuilder(ActionEvent event) {
 		try {
-			BorderPane borderPane = (BorderPane) FXMLLoader.load(getClass().getResource("/view/BuilderMenu.fxml"));
+			BorderPane borderPane = (BorderPane) FXMLLoader.load(getClass().getResource("/view/Builder.fxml"));
 			Main.getRoot().setCenter(borderPane);
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
@@ -38,10 +38,9 @@ public class MainMenuController implements Initializable {
 	@FXML
 	private void clickGame(ActionEvent event) {
 		try {
-			BorderPane borderPane = (BorderPane) FXMLLoader.load(getClass().getResource("/view/GameMenu.fxml"));
+			BorderPane borderPane = (BorderPane) FXMLLoader.load(getClass().getResource("/view/NewGame.fxml"));
 			Main.getRoot().setCenter(borderPane);
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}

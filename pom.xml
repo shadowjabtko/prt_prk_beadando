@@ -127,6 +127,10 @@
 									<version>1.8</version>
 									<message>JDK version is wrong.</message>
 								</requireJavaVersion>
+								<requireMavenVersion>
+									<version>3.0</version>
+									<message>Maven version is wrong.</message>
+								</requireMavenVersion>
 								<requireProperty>
 									<property>java.vendor</property>
 									<regex>Oracle Corporation</regex>

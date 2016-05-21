@@ -80,7 +80,6 @@ public class NewGameController implements Initializable {
 		String[] splitted = listView.getSelectionModel().getSelectedItem().split(":");
 		domXMLReader.setGameFieldFromXML(splitted[0], splitted[1].substring(1)+".xml");
 
-		//domXMLReader.setGameFieldFromXML("maps", "map1.xml");
 
 		listView.getSelectionModel().selectedIndexProperty().addListener(new ChangeListener<Number>() {
 
@@ -119,7 +118,7 @@ public class NewGameController implements Initializable {
 	@FXML
 	public void onClickBack(ActionEvent event) {
 		try {
-			BorderPane borderPane = (BorderPane) FXMLLoader.load(getClass().getResource("/view/GameMenu.fxml"));
+			BorderPane borderPane = (BorderPane) FXMLLoader.load(getClass().getResource("/view/MainMenu.fxml"));
 			Main.getRoot().setCenter(borderPane);
 		} catch (IOException e) {
 			// TODO Auto-generated catch block

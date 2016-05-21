@@ -7,9 +7,21 @@ import javafx.scene.shape.Circle;
 import javafx.scene.shape.Polygon;
 import javafx.scene.shape.StrokeType;
 
+/**
+ * Representing the {@code Field} graphically.
+ * 
+ * @author ShadowJabtko
+ *
+ */
 public class FieldGraphical extends Field {
 
+	/**
+	 * A polygon which representing the hexagon.
+	 */
 	private Polygon polygon;
+	/**
+	 * A circle which representing the players.
+	 */
 	private Circle circle;
 
 	private static final Double[] polygonPoints = new Double[] { -30.0, 0.0, -15.0, -25.0, 15.0, -25.0, 30.0, 0.0, 15.0,
@@ -54,38 +66,59 @@ public class FieldGraphical extends Field {
 		}
 	}
 
+	/**
+	 * Returns the polygon
+	 * 
+	 * @return The polygon.
+	 */
 	public Polygon getPolygon() {
 		return polygon;
 	}
 
+	/**
+	 * Returns the circle
+	 * 
+	 * @return The circle-
+	 */
 	public Circle getCircle() {
 		return circle;
 	}
-
+	
+	/**
+	 * Set the polygon and circle scale according to parameters. 
+	 * @param scaleX The scale on x axis.
+	 * @param scaleY The scale on y axis.
+	 */
 	private void setScale(double scaleX, double scaleY) {
 		polygon.setScaleX(scaleX);
 		polygon.setScaleY(scaleY);
 		circle.setScaleX(scaleX);
 		circle.setScaleY(scaleY);
 	}
-
+	/**
+	 * Set the polygon and circle translate according to parameters. 
+	 * @param translateX The translate on x axis.
+	 * @param translateY The translate on y axis.
+	 */
 	private void setTranslate(double translateX, double translateY) {
 		polygon.setTranslateX(translateX);
 		polygon.setTranslateY(translateY);
 		circle.setTranslateX(translateX);
 		circle.setTranslateY(translateY);
 	}
-
+	/**
+	 * Calculate and performs the transformations. 
+	 * @param paneWidth AnchorPane width where the game is appear.
+	 * @param paneHeight AnchorPane height where the game is appear.
+	 * @param sizeX The sizeX of the current game. 
+	 * @param sizeY The sizeY of the current game.
+	 */
 	public void setTransformations(double paneWidth, double paneHeight, double sizeX, double sizeY) {
 		double scaleX = paneWidth / (sizeX * 45 + 15);
 		double scaleY = paneHeight / (sizeY * 50 + 25);
 		/*
-		if (scaleX > scaleY) {
-			scaleX = scaleY;
-		} else {
-			scaleY = scaleX;
-		}
-		*/
+		 * if (scaleX > scaleY) { scaleX = scaleY; } else { scaleY = scaleX; }
+		 */
 		double plusX = 45 * scaleX;
 		double plusY = 50 * scaleY;
 		double plusY2 = 25 * scaleY;
@@ -94,11 +127,20 @@ public class FieldGraphical extends Field {
 		setScale(scaleX, scaleY);
 		setTranslate(translateX - polygonPoints[0] * scaleX, translateY + polygonPoints[11] * scaleY);
 	}
-
+	
+	/**
+	 * Sets the polygon border color (highlight).
+	 * @param color The color of the highlight.
+	 */
 	public void setHighlight(Color color) {
 		polygon.setStroke(color);
 	}
-
+	
+	/**
+	 * Sets the behavior of the polygon and circle.
+	 * @param mouseEventPolygon Behavior of polygon.
+	 * @param mouseEventCircle Behavior of circle.
+	 */
 	public void setMouseEvents(EventHandler<MouseEvent> mouseEventPolygon, EventHandler<MouseEvent> mouseEventCircle) {
 		polygon.setOnMouseClicked(mouseEventPolygon);
 		circle.setOnMouseClicked(mouseEventCircle);

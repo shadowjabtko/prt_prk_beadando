@@ -96,8 +96,7 @@ public class BuilderController implements Initializable {
 				domXMLWriter.setReWrite(true);
 			} else {
 				domXMLWriter.writeOut();
-				
-				txtWarn.setText("");
+				txtWarn.setText("File saved.");
 			}
 		} else {
 			txtWarn.setText("WARN: need filename!");
@@ -108,7 +107,7 @@ public class BuilderController implements Initializable {
 	@FXML
 	private void onClickBack(ActionEvent event) {
 		try {
-			BorderPane borderPane = (BorderPane) FXMLLoader.load(getClass().getResource("/view/BuilderMenu.fxml"));
+			BorderPane borderPane = (BorderPane) FXMLLoader.load(getClass().getResource("/view/MainMenu.fxml"));
 			Main.getRoot().setCenter(borderPane);
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
