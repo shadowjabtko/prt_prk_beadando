@@ -16,15 +16,29 @@ import org.xml.sax.SAXException;
 
 import model.field.Field.States;
 import model.game.Game;
-
+/**
+ * This class is for reading an xml file and set up a new game according to xml.
+ * @author ShadowJabtko
+ *
+ * @param <T>
+ */
 public class DomXMLReader<T extends Game<?>> {
-	
+	/**
+	 *Object for holding the {@code Game}.
+	 */
 	T game;
-	
+	/**
+	 * Constructs a newly allocated {@code DomXMLReader}
+	 * @param game The {@code Game} we want to set up.
+	 */
 	public DomXMLReader(T game){
 		this.game = game;
 	}
-	
+	/**
+	 * The main process
+	 * @param folder The folder that contains the map
+	 * @param fileName The file name of the xml.
+	 */
 	public void setGameFieldFromXML(String folder, String fileName){
 		try {
 			DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();

@@ -1,5 +1,6 @@
 package data;
 
+import java.io.File;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 
@@ -19,12 +20,33 @@ import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 
 import model.game.Game;
-
+/**
+ * This class is for write out a valid xml file for {@code DomXMLReader}.
+ * @author ShadowJabtko
+ *
+ * @param <T>
+ * 
+ * @see data.DomXMLReader
+ */
 public class DomXMLWriter<T extends Game<?>> {
+	
+	/**
+	 * Object for holding the {@code Game}.
+	 */
 	T game;
+	/**
+	 * The file name of the xml document.
+	 */
 	String fileName;
+	/**
+	 * This variable is for decide if the user want to rewrite a file or not.
+	 */
 	boolean reWrite;
-
+	/**
+	 * Constructs a newly allocated {@code DomXMLWriter} and creates the game folder to
+	 * user home directory if it is need.
+	 * @param game The {@code Game} we want to write out.
+	 */
 	public DomXMLWriter(T game) {
 		this.game = game;
 		this.fileName = new String("");
@@ -36,18 +58,27 @@ public class DomXMLWriter<T extends Game<?>> {
 			path.toFile().mkdir();
 		}
 	}
-	
+	/**
+	 * Sets the name of the file.
+	 * @param fileName The file name.
+	 */
 	public void setFileName(String fileName){
 		if (!this.fileName.equals(fileName)) {
 			reWrite = false;
 		}
 		this.fileName = fileName;
 	}
-	
+	/**
+	 * Returns the file name.
+	 * @return The name of the file, 
+	 */
 	public String getFileName(){
 		return this.fileName;
 	}
-	
+	/**
+	 * Creates a {@code Path} according to user gave ".xml" ending to file name or not.
+	 * @return {@code Path} where the file will be saved.
+	 */
 	private Path getPath(){
 		if (fileName.endsWith(".xml")) {
 			return Paths.get(System.getProperty("user.home"), "Hexxagon Game","custom_maps",fileName);
@@ -55,7 +86,10 @@ public class DomXMLWriter<T extends Game<?>> {
 			return Paths.get(System.getProperty("user.home"), "Hexxagon Game","custom_maps",fileName + ".xml");
 		}
 	}
-	
+	/**
+	 * Examine if the file exist or not.
+	 * @return {@code true} if exists; {@code false} otherwise; 
+	 */
 	public boolean isExist(){
 		if (getPath().toFile().exists()) {
 			return true;
@@ -63,15 +97,30 @@ public class DomXMLWriter<T extends Game<?>> {
 		return false;
 	}
 	
+	/**
+	 * Returns the variable reWrite.
+	 * @return reWrite.
+	 */
 	public boolean getReWrite(){
 		return reWrite;
 	}
-	
+	/**
+	 * Sets the reWrite variable.
+	 * @param value ...
+	 */
 	public void setReWrite(boolean value){
 		reWrite = value;
 	}
-	
+	/**
+	 * Write out the {@code Game} to the specified path location. 
+	 */
 	public void writeOut() {
+		writeOut(getPath().toFile());
+	}
+	/**
+	 * Write out the {@code Game} to the specified file. 
+	 */
+	public void writeOut(File file){
 		try {
 			DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
 			DocumentBuilder builder = factory.newDocumentBuilder();
@@ -120,9 +169,8 @@ public class DomXMLWriter<T extends Game<?>> {
 			trans.setOutputProperty("{http://xml.apache.org/xslt}indent-amount", "2");
 
 			DOMSource source = new DOMSource(doc);
-			Path path = getPath();
 
-			StreamResult result = new StreamResult(path.toFile());
+			StreamResult result = new StreamResult(file);
 			trans.transform(source, result);
 		} catch (ParserConfigurationException e) {
 			// TODO Auto-generated catch block
