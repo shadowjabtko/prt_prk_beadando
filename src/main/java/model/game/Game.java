@@ -393,7 +393,7 @@ public class Game<T extends Field> {
 			logger.info("Selectable!");
 			return true;
 		}
-		logger.info("Not selectable!");
+		logger.warn("Not selectable!");
 		return false;
 	}
 
