@@ -400,7 +400,7 @@ public class Game<T extends Field> {
 	/**
 	 * Select the given {@code Field} is it is possible and sets the
 	 * {@code closeToSelectedField} variable and the
-	 * {@code closeToSelectedField} variable.
+	 * {@code farToSelectedField} variable.
 	 * 
 	 * @param field
 	 *            The {@code Field} we want to select,

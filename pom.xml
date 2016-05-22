@@ -186,7 +186,6 @@
 				<configuration>
 					<configLocation>${basedir}/config/checkstyle.xml</configLocation>
 					<excludes>controller/*,application/*,</excludes>
-
 				</configuration>
 			</plugin>
 		</plugins>
