@@ -160,6 +160,7 @@ public class FieldGraphical extends Field {
 			double newHeight = sizeY * 50 * scaleY + 25 * scaleY;
 			plusY3 = (paneHeight - newHeight) / 2.0;
 		}
+		
 
 		double plusX = 45 * scaleX;
 		double plusY = 50 * scaleY;
