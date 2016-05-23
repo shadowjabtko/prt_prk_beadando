@@ -136,6 +136,7 @@ public class GameTest {
 		assertEquals(true, game2.isEnd());
 		assertEquals(States.GREEN_PLAYER, game2.getField(0, 1).getState());
 		assertEquals(States.GREEN_PLAYER, game2.getField(1, 0).getState());
+		assertEquals(2, game2.whoWon());
 	};
 
 	@Test

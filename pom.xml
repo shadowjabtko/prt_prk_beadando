@@ -140,6 +140,35 @@
 					</execution>
 				</executions>
 			</plugin>
+			<plugin>
+				<groupId>org.jacoco</groupId>
+				<artifactId>jacoco-maven-plugin</artifactId>
+				<version>0.7.6.201602180812</version>
+
+				<configuration>
+					<excludes>
+						<exclude>controller/*</exclude>
+						<exclude>application/*</exclude>
+						<exclude>model/game/*Graphical*</exclude>
+						<exclude>model/field/*Graphical*</exclude>
+					</excludes>
+				</configuration>
+				<executions>
+					<execution>
+						<id>jacoco-initialize</id>
+						<goals>
+							<goal>prepare-agent</goal>
+						</goals>
+					</execution>
+					<execution>
+						<id>jacoco-site</id>
+						<phase>package</phase>
+						<goals>
+							<goal>report</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
 		</plugins>
 	</build>
 	<reporting>
@@ -163,21 +192,24 @@
 				<version>2.5</version>
 			</plugin>
 			<plugin>
-				<groupId>org.codehaus.mojo</groupId>
-				<artifactId>cobertura-maven-plugin</artifactId>
-				<version>2.7</version>
-				<reportSets>
-					<reportSet>
-						<reports>
-							<report>cobertura</report>
-						</reports>
-					</reportSet>
-				</reportSets>
+				<groupId>org.jacoco</groupId>
+				<artifactId>jacoco-maven-plugin</artifactId>
+				<version>0.7.6.201602180812</version>
 				<configuration>
 					<excludes>
 						<exclude>controller/*</exclude>
+						<exclude>application/*</exclude>
+						<exclude>model/game/*Graphical*</exclude>
+						<exclude>model/field/*Graphical*</exclude>
 					</excludes>
 				</configuration>
+				<reportSets>
+					<reportSet>
+						<reports>
+							<report>report</report>
+						</reports>
+					</reportSet>
+				</reportSets>
 			</plugin>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
@@ -185,7 +217,7 @@
 				<version>2.17</version>
 				<configuration>
 					<configLocation>${basedir}/config/checkstyle.xml</configLocation>
-					<excludes>controller/*,application/*,</excludes>
+					<excludes>controller/*,application/*</excludes>
 				</configuration>
 			</plugin>
 		</plugins>
