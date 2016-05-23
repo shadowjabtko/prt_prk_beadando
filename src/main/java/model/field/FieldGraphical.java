@@ -148,14 +148,24 @@ public class FieldGraphical extends Field {
 	public void setTransformations(double paneWidth, double paneHeight, double sizeX, double sizeY) {
 		double scaleX = paneWidth / (sizeX * 45 + 15);
 		double scaleY = paneHeight / (sizeY * 50 + 25);
-		/*
-		 * if (scaleX > scaleY) { scaleX = scaleY; } else { scaleY = scaleX; }
-		 */
+		
+		double plusX2 = 0.0;
+		double plusY3 = 0.0;
+		if (scaleX > scaleY) {
+			scaleX = scaleY;
+			double newWidth = sizeX * 45 * scaleX + 15 * scaleX;
+			plusX2 = (paneWidth - newWidth) / 2.0;
+		} else {
+			scaleY = scaleX;
+			double newHeight = sizeY * 50 * scaleY + 25 * scaleY;
+			plusY3 = (paneHeight - newHeight) / 2.0;
+		}
+
 		double plusX = 45 * scaleX;
 		double plusY = 50 * scaleY;
 		double plusY2 = 25 * scaleY;
-		double translateX = axisX * plusX;
-		double translateY = axisX % 2 == 0 ? axisY * plusY : axisY * plusY + plusY2;
+		double translateX = axisX * plusX + plusX2;
+		double translateY = axisX % 2 == 0 ? axisY * plusY + plusY3: axisY * plusY + plusY2 + plusY3;
 		setScale(scaleX, scaleY);
 		setTranslate(translateX - polygonPoints[0] * scaleX, translateY + polygonPoints[11] * scaleY);
 	}
