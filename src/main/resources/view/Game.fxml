@@ -29,7 +29,7 @@
                   <Label layoutX="14.0" layoutY="31.0" text="Red points:" />
                   <Text fx:id="redPoints" layoutX="99.0" layoutY="44.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
                   <Label layoutX="14.0" layoutY="56.0" text="Green points:" />
-                  <Text fx:id="greenPoints" layoutX="99.0" layoutY="69.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+                  <Text fx:id="greenPoints" layoutX="109.0" layoutY="69.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
                   <Text fx:id="txtInfo" layoutX="14.0" layoutY="108.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 15;" text="Text" />
                </children>
             </AnchorPane>
