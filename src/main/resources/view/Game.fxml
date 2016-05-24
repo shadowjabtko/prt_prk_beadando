@@ -16,7 +16,7 @@
       </AnchorPane>
    </center>
    <left>
-      <BorderPane prefHeight="600.0" prefWidth="154.0" BorderPane.alignment="CENTER">
+      <BorderPane prefHeight="600.0" prefWidth="175.0" BorderPane.alignment="CENTER">
          <bottom>
             <Button minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onClickBack" prefHeight="55.0" prefWidth="135.0" text="Main Menu" BorderPane.alignment="CENTER">
                <BorderPane.margin>
@@ -24,12 +24,12 @@
                </BorderPane.margin></Button>
          </bottom>
          <center>
-            <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+            <AnchorPane prefHeight="525.0" prefWidth="184.0" BorderPane.alignment="CENTER">
                <children>
                   <Label layoutX="14.0" layoutY="31.0" text="Red points:" />
-                  <Text fx:id="redPoints" layoutX="86.0" layoutY="44.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
-                  <Label layoutX="14.0" layoutY="56.0" text="Greenpoints:" />
-                  <Text fx:id="greenPoints" layoutX="86.0" layoutY="69.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+                  <Text fx:id="redPoints" layoutX="99.0" layoutY="44.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+                  <Label layoutX="14.0" layoutY="56.0" text="Green points:" />
+                  <Text fx:id="greenPoints" layoutX="99.0" layoutY="69.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
                   <Text fx:id="txtInfo" layoutX="14.0" layoutY="108.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 15;" text="Text" />
                </children>
             </AnchorPane>

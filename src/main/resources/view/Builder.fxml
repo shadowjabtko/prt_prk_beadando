@@ -11,17 +11,17 @@
 
 <BorderPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.BuilderController">
    <left>
-      <BorderPane BorderPane.alignment="CENTER">
+      <BorderPane prefHeight="600.0" prefWidth="175.0" BorderPane.alignment="CENTER">
          <center>
             <AnchorPane prefHeight="600.0" prefWidth="150.0">
                <children>
-                  <Button fx:id="btnSelect" layoutX="7.0" layoutY="24.0" mnemonicParsing="false" onAction="#onClickButtons" prefHeight="55.0" prefWidth="135.0" text="Select" />
-                  <Button fx:id="btnDelete" layoutX="7.0" layoutY="91.0" mnemonicParsing="false" onAction="#onClickButtons" prefHeight="55.0" prefWidth="135.0" text="Delete" />
-                  <Button fx:id="btnRed" layoutX="7.0" layoutY="158.0" mnemonicParsing="false" onAction="#onClickButtons" prefHeight="55.0" prefWidth="135.0" text="   Red" />
-                  <Button fx:id="btnGreen" layoutX="7.0" layoutY="225.0" mnemonicParsing="false" onAction="#onClickButtons" prefHeight="55.0" prefWidth="135.0" text=" Green" />
-                  <TextField fx:id="tfFileName" layoutX="8.0" layoutY="318.0" minHeight="-Infinity" prefWidth="135.0" />
-                  <Label layoutX="10.0" layoutY="301.0" text="File Name:" />
-                  <Button layoutX="7.0" layoutY="355.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onClickSave" prefHeight="55.0" prefWidth="135.0" text="Save" />
+                  <Button fx:id="btnSelect" layoutX="20.0" layoutY="25.0" mnemonicParsing="false" onAction="#onClickButtons" prefHeight="55.0" prefWidth="135.0" text="Select" />
+                  <Button fx:id="btnDelete" layoutX="20.0" layoutY="92.0" mnemonicParsing="false" onAction="#onClickButtons" prefHeight="55.0" prefWidth="135.0" text="Delete" />
+                  <Button fx:id="btnRed" layoutX="20.0" layoutY="159.0" mnemonicParsing="false" onAction="#onClickButtons" prefHeight="55.0" prefWidth="135.0" text="   Red" />
+                  <Button fx:id="btnGreen" layoutX="20.0" layoutY="226.0" mnemonicParsing="false" onAction="#onClickButtons" prefHeight="55.0" prefWidth="135.0" text=" Green" />
+                  <TextField fx:id="tfFileName" layoutX="21.0" layoutY="319.0" minHeight="-Infinity" prefWidth="135.0" />
+                  <Label layoutX="23.0" layoutY="302.0" text="File Name:" />
+                  <Button layoutX="20.0" layoutY="356.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onClickSave" prefHeight="55.0" prefWidth="135.0" text="Save" />
                   <Text fx:id="txtWarn" layoutX="10.0" layoutY="432.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
                </children>
             </AnchorPane>
